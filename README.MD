@@ -1,4 +1,4 @@
-# RAG System: Bridging Foundational LLMs to Domain-Specific Organizational Knowledge
+# RAG System: Grounding AI models in verified enterprise data for high-accuracy execution
 
 This pipeline grounds a general-purpose language model in an organization's own documents. Policies, SOPs, reports, and wikis are chunked, embedded, and stored in a local ChromaDB index. At question time the index is searched first. Only when that evidence is missing or incomplete does the answer fall through to live web search, and only then to the model's pre-trained knowledge.
 
@@ -36,7 +36,7 @@ When retrieved evidence cannot support a conclusion, the run records that. `Simp
 
 **The enterprise ideal is the hybrid.** Use RAG to pull up-to-date facts from documents. Use light fine-tuning only for tone, structure, and branding. This repository implements the RAG side: documents are chunked and embedded into ChromaDB without a training run. Adapting model weights is a separate job and is not part of `rag_pipeline.py`.
 
-## Why RAG wins in deployment
+## Why Internal Context Comes First
 
 Organizations keep a local knowledge base because the facts change faster than a training cycle.
 
