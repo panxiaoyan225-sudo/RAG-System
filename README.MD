@@ -89,13 +89,3 @@ Paths and runtime settings live in `.env` next to `rag_pipeline.py`. The Python 
 
 If a required variable is missing, the process exits before it touches the index.
 
-## Run
-
-From `C:\Python\RAG`, with the libraries this pipeline imports:
-
-```bash
-pip install chromadb sentence-transformers pymupdf python-docx
-python rag_pipeline.py
-```
-
-PyMuPDF supplies `fitz` for PDF text. `python-docx` supplies Word paragraphs. A missing extractor library skips that format with an empty extract rather than crashing the walk. Put documents under `RAG_REPORTS_DIR` and run again to extend the index.
