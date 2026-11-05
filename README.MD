@@ -89,6 +89,6 @@ Paths and runtime settings live in `.env` next to `rag_pipeline.py`. The Python 
 
 If a required variable is missing, the process exits before it touches the index.
 
-> **Technology enables retrieval.**
-> **Organization provides context.**
+> **Technology enables retrieval.**   
+> **Organization provides context.**   
 > **Human determines how that knowledge should be used.**
