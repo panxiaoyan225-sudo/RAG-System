@@ -1,5 +1,13 @@
 # Grounding AI models in verified enterprise data for high-accuracy execution
 
+<div align="right">
+  <blockquote>
+    <p><strong>Technology enables retrieval.</strong></p>
+    <p><strong>Organization provides context.</strong></p>
+    <p><strong>Human determines how that knowledge should be used.</strong></p>
+  </blockquote>
+</div>
+
 This pipeline grounds a general-purpose language model in an organization's own documents. Policies, SOPs, reports, and wikis are chunked, embedded, and stored in a local ChromaDB index. At question time the index is searched first. Only when that evidence is missing or incomplete does the answer fall through to live web search, and only then to the model's pre-trained knowledge.
 
 The script in `rag_pipeline.py` does the organizational half of that design: ingest, embed, retrieve, and assemble a context-enriched prompt. A separate inference endpoint — Cursor or OpenClaw, running DeepSeek-R1, Qwen, or Llama 3 — receives that prompt and writes the answer. Document text is embedded into the vector index. Model weights are not retrained when the files change.
@@ -89,10 +97,3 @@ Paths and runtime settings live in `.env` next to `rag_pipeline.py`. The Python 
 
 If a required variable is missing, the process exits before it touches the index.
 
-<div align="right">
-  <blockquote>
-    <p><strong>Technology enables retrieval.</strong></p>
-    <p><strong>Organization provides context.</strong></p>
-    <p><strong>Human determines how that knowledge should be used.</strong></p>
-  </blockquote>
-</div>
