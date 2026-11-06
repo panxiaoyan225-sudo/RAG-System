@@ -5,7 +5,8 @@ Supports multiple document formats: HTML, PDF, DOCX, TXT, MD
 Skips code directories automatically (.venv, .git, __pycache__, node_modules, etc.)
 With DuplicateIDError handling for ChromaDB
 """
-#Langchain-RAG example using Ollama in Langchain_RAG.py
+#Following is a Custom RAG
+#Langchain-RAG example using Ollama in Langchain_RAG.py, for rapid development
 
 import os
 import re
