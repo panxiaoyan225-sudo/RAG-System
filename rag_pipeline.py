@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
-RAG Pipeline — ChromaDB + Custom Python (Open-Source Embedding)
+Custom RAG Pipeline — ChromaDB + Custom Python (Open-Source Embedding)
 Supports multiple document formats: HTML, PDF, DOCX, TXT, MD
 Skips code directories automatically (.venv, .git, __pycache__, node_modules, etc.)
 With DuplicateIDError handling for ChromaDB
 """
+#Langchain-RAG example using Ollama in Langchain_RAG.py
 
 import os
 import re
