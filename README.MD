@@ -3,7 +3,7 @@
 This Custom RAG pipeline grounds a general-purpose language model in an organization's own documents. Policies, SOPs, reports, and wikis are chunked, embedded, and stored in a local ChromaDB index. At question time the index is searched first. Only when that evidence is missing or incomplete does the answer fall through to live web search, and only then to the model's pre-trained knowledge.
 
 The script in `rag_pipeline.py` does the organizational half of that design: ingest, embed, retrieve, and assemble a context-enriched prompt. A separate inference endpoint — Cursor or OpenClaw, running DeepSeek-R1, Qwen, or Llama 3 — receives that prompt and writes the answer. Document text is embedded into the vector index. Model weights are not retrained when the files change.    
-(Start with Langchain-RAG: If you you want to rapid development, proof‑of‑concept, or leverage the ecosystem.)
+(Start with Langchain-RAG: If you you want for rapid development, proof‑of‑concept, or leverage the ecosystem.)
 
 ## Priority cascade
 
