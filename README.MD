@@ -12,7 +12,7 @@ A user question enters a fixed order. Internal evidence outranks the open web, a
 ```mermaid
 flowchart LR
     Q[User query] --> R1[1. Internal organizational context]
-    R1 --> R2[2. Online search and real-time data]
+    R1 --> R2[2. Web search and real-time data]
     R2 --> R3[3. Pre-trained parametric knowledge]
     R1 --> P[Context-enriched prompt]
     R2 --> P
@@ -21,7 +21,7 @@ flowchart LR
 ```
 
 1. **Internal organizational context (primary).** ChromaDB is searched for the nearest document chunks. Those passages ground the model in factual enterprise text, and each passage keeps the source file name and chunk index.
-2. **Online search runs only with approval.** If the retrieved context is missing, incomplete, or the question needs a current fact, the inference endpoint is instructed to use web search only after approval. 
+2. **Web search runs only with approval.** If the retrieved context is missing, incomplete, or the question needs a current fact, the inference endpoint is instructed to use web search only after approval. 
 3. **Pre-trained parametric knowledge (last resort).** General reasoning fills gaps that neither the index nor a live search covers.
 
 When retrieved evidence cannot support a conclusion, the run records that. `SimpleRAGAgent.self_correct()` scores lexical overlap between the assembled prompt and the retrieved passages and sets `supported` and `needs_rephrase`. A thin overlap means the agent should stop leaning on the index and either rephrase or move down the cascade, rather than invent a citation.
